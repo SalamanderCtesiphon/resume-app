@@ -2,38 +2,23 @@ import React, { useState } from "react"
 import '../App.css'
 
 const ContactInfo = (props) => {
-    const [inputs, setInputs] = useState({
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [contacInfo, setContactInfo] = useState({
         firstName: '',
-        lastName: '',
-    });
+        lastName: ''
+    })
 
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        
-        addInputs([inputs]);
-        setInputs({
-            firstName: '',
-            lastName: ''
+        setContactInfo({
+            firstName: {firstName},
+            lastName: {lastName}
         });
+        setFirstName('');
+        setLastName('');
     };
-
-    const addInputs = (firstName, lastName) => {
-        const newContactInfo = {firstName, lastName}
-        console.log(newContactInfo);
-    }
-
-    const handleInputChange = (e) => {
-        const target = e.target;
-        const value = target.value;
-        const name = target.name;
-
-        setInputs({
-            [name]: value,
-            [name]: value,
-        });
-    }
 
     return (
         <div className="contactForm">
@@ -43,15 +28,15 @@ const ContactInfo = (props) => {
                 <input 
                     type="text"
                     name="firstName" 
-                    value={inputs.firstName}
-                    onChange={handleInputChange}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                 />
                 <label>Last Name:</label>
                 <input 
                     type="text"
                     name="lastName" 
-                    value={inputs.lastName}
-                    onChange={handleInputChange}
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                 />
                 <button type="submit">Submit</button>
             </form>
