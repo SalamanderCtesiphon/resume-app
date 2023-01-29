@@ -2,6 +2,7 @@ import './App.css';
 import ContactInfo from './components/ContactInfo';
 
 function App() {
+  
 
   return (
     <div className="App">
