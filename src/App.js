@@ -26,12 +26,12 @@ function App(props) {
       setZip(zip);
       setEmail(email);
       setPhone(phone);
-      setContactSubmit(false);
+      setContactSubmit(true);
   };
 
   function toggleContact(e) {
     console.log('click')
-    setContactSubmit(true);
+    setContactSubmit(false);
   }
 
   return (
