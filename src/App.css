@@ -1,11 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
 }
 
 .contactForm {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 15vw;
+  height: auto;
   margin: 10px;
   padding: 10px;
   border: 1px solid black;
@@ -19,4 +31,29 @@
 button {
   margin: 10px;
   width: 5vw;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: 1px solid black;
+  background-color: rgba(177, 223, 130, 0.637);
+}
+
+.sidebar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 20;
+}
+
+.page {
+  border: 1px solid black;
+  grid-column-start: 4;
+  grid-column-end: 21;
+  height: 90vh;
+  width: 60vw;
+  margin: 10px;
 }

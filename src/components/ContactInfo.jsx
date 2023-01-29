@@ -1,24 +1,8 @@
-import React, { useState } from "react"
+
 import '../App.css'
 
-const ContactInfo = (props) => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [contacInfo, setContactInfo] = useState({
-        firstName: '',
-        lastName: ''
-    })
-
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        setContactInfo({
-            firstName: {firstName},
-            lastName: {lastName}
-        });
-        setFirstName('');
-        setLastName('');
-    };
+const ContactInfo = ({ firstName, lastName, setFirstName, setLastName, handleSubmit}) => {
+ 
 
     return (
         <div className="contactForm">
