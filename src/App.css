@@ -57,3 +57,13 @@ button {
   width: 60vw;
   margin: 10px;
 }
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+input {
+  margin: 4px;
+}
