@@ -13,15 +13,19 @@
   grid-template-rows: repeat(20, 1fr);
 }
 
-.contactForm {
+.contactForm, .educationForm {
   display: flex;
   flex-direction: column;
   width: 15vw;
   height: auto;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px gray;
+  background-color: rgba(246, 241, 235, 0.734);
 }
+
 
 .contactInputs {
   display: flex;
@@ -38,7 +42,6 @@ button {
   grid-column-end: 21;
   grid-row-start: 1;
   grid-row-end: 2;
-  border: 1px solid black;
   background-color: rgba(177, 223, 130, 0.637);
 }
 
@@ -50,12 +53,15 @@ button {
 }
 
 .page {
-  border: 1px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  background-color: rgba(246, 241, 235, 0.734);
+  border-radius: 20px;
   grid-column-start: 4;
   grid-column-end: 21;
   height: 90vh;
-  width: 60vw;
+  width: 50vw;
   margin: 10px;
+  box-shadow: 10px 10px 20px gray;
 }
 
 .pageHeader {
