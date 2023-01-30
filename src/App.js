@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import './App.css';
 import ContactInfo from './components/ContactInfo';
+import EditExperienceCard from "./components/EditExperienceCard";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 
@@ -127,6 +128,10 @@ function App(props) {
     setExperienceSunmit(false);
   }
 
+  function toggleJobEditing(id) {
+    setJobEditing(true);
+  }
+
   return (
     <div className="App">
       <h1 className="header">Resume Editor</h1>
@@ -210,47 +215,14 @@ function App(props) {
                     className="listItem"
                   >
                     {job.id === jobEditing ? (
-                      <form className="jobEditingForm">
-                        {'Company Name:'}<input 
-                          type="text"
-                          name="companyName"
-                          value={companyName}
-                          onChange={(e) => setCompanyName(e.target.value)}
-                        />
-                        {'Position: '}<input 
-                          type="text"
-                          name="positionTitle"
-                          value={positionTitle}
-                          onChange={(e) => setPositionTitle(e.target.value)}
-                        />
-                        {'Start Date: '} <input 
-                          type="text"
-                          name='startExperienceDate'
-                          value={startExperienceDate}
-                          onChange={(e) => setStartExperienceDate(e.target.value)}
-                        />
-                        {'Seperation Date: '}  <input 
-                          type="text"
-                          name='seperationDate'
-                          value={seperationDate}
-                          onChange={(e) => setSeperationDate(e.target.value)}
-                        />
-                        <button>Resubmit</button>
-                      </form>
+                      <EditExperienceCard 
+                        job={job}
+                        toggleJobEditing={toggleJobEditing}
+                        delJob={delJob}
+                      />
                     ):(
-                      <div className="jobCard">
-                        <div className="details">
-                          <div className="cardItem">Company Name: {job.companyName}</div>
-                          <div className="cardItem">Position: {job.positionTitle}</div>
-                          <div className="cardItem">Start Date: {job.startExperienceDate}</div>
-                          <div className="cardItem">Seperation Date: {job.seperationDate}</div>
-                        </div>
-                        <div className="cardItem btnBox"><button onClick={(id) => setJobEditing(true)}>Edit</button>
-                        <button onClick={delJob}>Delete</button></div>
-
-                      </div>
-                    )}
-                    
+                     <ExperienceCard />
+                    )} 
                   </li>
                 ))}
               </ul>
