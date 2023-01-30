@@ -14,6 +14,8 @@ const EditExperienceCard = ({
 }) => {
     return(
       <div>
+        <div className='jobCard'>
+          <div className='details'>
             <form className="jobEditingForm" onSubmit={() => submitEdits(job.id)}>
               {'Company Name:'}<input 
                 type="text"
@@ -39,8 +41,12 @@ const EditExperienceCard = ({
                 value={editingSeperationDate}
                 onChange={(e) => setEditingSeperationDate(e.target.value)}
               />
-              <button>Resubmit</button>
+              <div className='btnBox'>
+                <button>Resubmit</button>
+              </div>
             </form>
+          </div>
+        </div>
       </div>
     )
 }
