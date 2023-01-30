@@ -1,50 +1,51 @@
 const Experience = ({
-    educationSubmit, 
-    toggleEducation, 
-    handleEducationSubmit,
-    schoolName,
-    setSchoolName,
-    fieldOfStudy,
-    setFieldOfStudy,
-    startDate,
-    setStartDate,
-    completeDate, 
-    setCompleteDate
+    experienceSubmit,
+    toggleExperience,
+    handleExperienceSubmit,
+    companyName,
+    setCompanyName,
+    positionTitle,
+    setPositionTitle,
+    startExperienceDate,
+    setStartExperienceDate,
+    seperationDate,
+    setSeperationDate
 }) => {
+
     return (
         <div className="educationForm">
             <h3>Experience </h3>
-            {educationSubmit === true ? (
-                <button onClick={toggleEducation}>Edit Section</button>
+            {experienceSubmit === true ? (
+                <button onClick={toggleExperience}>Add</button>
             ) : (
-            <form className='contactInputs' onSubmit={handleEducationSubmit}>
-                <label>School Name:</label>
+            <form className='contactInputs' onSubmit={handleExperienceSubmit}>
+                <label>Company Name:</label>
                 <input 
                     type="text"
-                    name="schoolName"
-                    value={schoolName}
-                    onChange={(e) => setSchoolName(e.target.value)}
+                    name="companyName"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
                 />
-                <label>Field of Study:</label>
+                <label>Position Title:</label>
                 <input 
                    type="text"
-                   name="fieldOfStudy"
-                   value={fieldOfStudy}
-                   onChange={(e) => setFieldOfStudy(e.target.value)}
+                   name="positionTitle"
+                   value={positionTitle}
+                   onChange={(e) => setPositionTitle(e.target.value)}
                 />
                 <label>Start Date:</label>
                  <input 
                    type="text"
-                   name='startDate'
-                   value={startDate}
-                   onChange={(e) => setStartDate(e.target.value)}
+                   name='startExperienceDate'
+                   value={startExperienceDate}
+                   onChange={(e) => setStartExperienceDate(e.target.value)}
                 />
-                 <label>Completion Date:</label>
+                 <label>Seperation Date:</label>
                  <input 
                     type="text"
-                    name='completeDate'
-                    value={completeDate}
-                    onChange={(e) => setCompleteDate(e.target.value)}
+                    name='seperationDate'
+                    value={seperationDate}
+                    onChange={(e) => setSeperationDate(e.target.value)}
                 />
                 <button type="submit">Submit</button>
             </form>

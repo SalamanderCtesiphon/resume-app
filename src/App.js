@@ -3,6 +3,7 @@ import './App.css';
 import ContactInfo from './components/ContactInfo';
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import ExperienceList from "./components/ExperienceList";
 
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
@@ -15,10 +16,15 @@ function App(props) {
   const [phone, setPhone] = useState('+1-555-444-8523');
   const [contactSubmit, setContactSubmit] = useState(true);
   const [educationSubmit, setEducationSubmit] = useState(true);
-  const [schoolName, setSchoolName] = useState('Texas Tech University')
+  const [schoolName, setSchoolName] = useState('Texas Tech University');
   const [fieldOfStudy, setFieldOfStudy] = useState('Ergonomics');
   const [startDate, setStartDate] = useState('July 1776');
   const [completeDate, setCompleteDate] = useState('December 2040');
+  const [companyName, setCompanyName] = useState('Famous Company');
+  const [positionTitle, setPositionTitle] = useState('Manager');
+  const [startExperienceDate, setStartExperienceDate] = useState('December 2012');
+  const [seperationDate, setSeperationDate] = useState('August 2020');
+  const [experienceSubmit, setExperienceSunmit] = useState(true);
 
   function handleSubmit(e) {
       e.preventDefault();
@@ -42,12 +48,25 @@ function App(props) {
     setEducationSubmit(true);
   }
 
+  function handleExperiencSubmit(e) {
+    e.preventDefault();
+    setCompanyName(companyName);
+    setPositionTitle(positionTitle);
+    setStartExperienceDate(startExperienceDate);
+    setSeperationDate(seperationDate);
+    setExperienceSunmit(true);
+  }
+
   function toggleContact(e) {
     setContactSubmit(false);
   }
 
   function toggleEducation(e) {
     setEducationSubmit(false);
+  }
+
+  function toggleExperience(e) {
+    setExperienceSunmit(false);
   }
 
   return (
@@ -88,7 +107,19 @@ function App(props) {
           completeDate={completeDate}
           setCompleteDate={setCompleteDate}
         />
-        <Experience />
+        <Experience
+           experienceSubmit={experienceSubmit}
+           toggleExperience={toggleExperience}
+           handleExperienceSubmit={handleExperiencSubmit}
+           companyName={companyName}
+           setCompanyName={setCompanyName}
+           positionTitle={positionTitle}
+           setPositionTitle={setPositionTitle}
+           startExperienceDate={startExperienceDate}
+           setStartExperienceDate={setStartExperienceDate}
+           seperationDate={seperationDate}
+           setSeperationDate={setSeperationDate}
+        />
       </div>
       <div className="page">
         <div className="pageHeader">
@@ -107,6 +138,9 @@ function App(props) {
           <p>{schoolName}</p>
           <p>{fieldOfStudy}</p>
           <p>{startDate}{' '}-{' '}{completeDate}</p>
+          <div className="wrapper">
+            <ExperienceList />
+          </div>
         </div>
       </div>
     </div>
