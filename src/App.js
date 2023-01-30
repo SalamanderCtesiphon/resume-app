@@ -26,7 +26,7 @@ function App(props) {
   const [startExperienceDate, setStartExperienceDate] = useState('');
   const [seperationDate, setSeperationDate] = useState('');
   const [experienceSubmit, setExperienceSunmit] = useState(true);
-  const [jobEditing, setJobEditing] = useState(false);
+  const [jobEditing, setJobEditing] = useState(null);
   const [jobs, setJobs] = useState([
     {
       id: 1,
@@ -35,7 +35,7 @@ function App(props) {
       startExperienceDate: "July 2016",
       seperationDate: "August 2016",
       experienceSubmit: true,
-      jobEditing: true
+      jobEditing: null
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ function App(props) {
       startExperienceDate: "June 2066",
       seperationDate: "August 2067",
       experienceSubmit: true,
-      jobEditing: false
+      jobEditing: null
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ function App(props) {
       startExperienceDate: "January 1980",
       seperationDate: "August 1984",
       experienceSubmit: true,
-      jobEditing: false
+      jobEditing: null
     }
 
   ]);
@@ -95,7 +95,7 @@ function App(props) {
     setStartExperienceDate('');
     setSeperationDate('');
     setExperienceSunmit(true);
-    setJobEditing(false);
+    setJobEditing(null);
   }
 
   const addJob = (job) => {
@@ -126,10 +126,6 @@ function App(props) {
 
   function toggleExperience(e) {
     setExperienceSunmit(false);
-  }
-
-  function toggleJobEditing(id) {
-    setJobEditing(true);
   }
 
   return (
@@ -217,7 +213,7 @@ function App(props) {
                     {job.id === jobEditing ? (
                       <EditExperienceCard 
                         job={job}
-                        toggleJobEditing={toggleJobEditing}
+                        setJobEditing={setJobEditing}
                         delJob={delJob}
                         companyName={companyName}
                         setCompanyName={setCompanyName}
@@ -225,6 +221,8 @@ function App(props) {
                     ):(
                      <ExperienceCard
                       job={job}
+                      setJobEditing={setJobEditing}
+                      jobEditing={jobEditing}
                      />
                     )} 
                   </li>

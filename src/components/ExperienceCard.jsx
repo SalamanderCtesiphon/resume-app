@@ -1,4 +1,4 @@
-const ExperienceCard = ({ job, toggleJobEditing, delJob }) => {
+const ExperienceCard = ({ job, setJobEditing, delJob }) => {
     return (
         <div>
             <div className="jobCard">
@@ -7,7 +7,7 @@ const ExperienceCard = ({ job, toggleJobEditing, delJob }) => {
                           <div className="cardItem">Start Date: {job.startExperienceDate}</div>
                           <div className="cardItem">Seperation Date: {job.seperationDate}</div>
                       </div>
-                      <div className="cardItem btnBox"><button onClick={toggleJobEditing}>Edit</button>
+                      <div className="cardItem btnBox"><button onClick={() => setJobEditing(job.id)}>Edit</button>
                       <button onClick={delJob}>Delete</button></div>
         </div>
     )
