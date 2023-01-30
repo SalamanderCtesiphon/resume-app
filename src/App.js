@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import './App.css';
 import ContactInfo from './components/ContactInfo';
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
@@ -21,7 +22,6 @@ function App(props) {
 
   function handleSubmit(e) {
       e.preventDefault();
-      
       setFirstName(firstName);
       setLastName(lastName);
       setStreetAddress(streetAddress);
@@ -35,7 +35,6 @@ function App(props) {
 
   function handleEducationSubmit(e) {
     e.preventDefault();
-
     setSchoolName(schoolName);
     setFieldOfStudy(fieldOfStudy);
     setStartDate(startDate);
@@ -89,6 +88,7 @@ function App(props) {
           completeDate={completeDate}
           setCompleteDate={setCompleteDate}
         />
+        <Experience />
       </div>
       <div className="page">
         <div className="pageHeader">
