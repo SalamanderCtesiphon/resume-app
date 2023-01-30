@@ -7,17 +7,17 @@ import Experience from "./components/Experience";
 import ExperienceCard from "./components/ExperienceCard";
 
 function App(props) {
-  const [firstName, setFirstName] = useState('Seamus');
-  const [lastName, setLastName] = useState('Quixote');
-  const [streetAddress, setStreetAddress] = useState('3312 W. Willmington St.');
-  const [city, setCity] = useState('Lamesa');
-  const [state, setState] = useState('TX');
+  const [firstName, setFirstName] = useState('Someone');
+  const [lastName, setLastName] = useState('Important');
+  const [streetAddress, setStreetAddress] = useState('3312 W. Easy St.');
+  const [city, setCity] = useState('Topeka');
+  const [state, setState] = useState('KS');
   const [zip, setZip] = useState('79777');
   const [email, setEmail] = useState('famouscompany@aol.com');
   const [phone, setPhone] = useState('+1-555-444-8523');
   const [contactSubmit, setContactSubmit] = useState(true);
   const [educationSubmit, setEducationSubmit] = useState(true);
-  const [schoolName, setSchoolName] = useState('Peperdine University');
+  const [schoolName, setSchoolName] = useState('Prestigious University');
   const [fieldOfStudy, setFieldOfStudy] = useState('Doctorate of Philosophy in Phrenology');
   const [startDate, setStartDate] = useState('June 1979');
   const [completeDate, setCompleteDate] = useState('December 2040');
@@ -135,14 +135,10 @@ function App(props) {
   function submitEdits(id) {
     const updatedJobs = [...jobs].map((job) => {
       if (job.id === id) {
-        (editingCompanyName === '' ? job.companyName = job.companyName :
-        job.companyName = editingCompanyName);
-        (editingPositionTitle === '' ? job.positionTitle = job.positionTitle :
-        job.positionTitle = editingPositionTitle);
-        (editingStartExperienceDate === '' ? job.startExperienceDate = job.startExperienceDate :
-        job.startExperienceDate = editingStartExperienceDate);
-        (editingSeperationDate === '' ? job.seperationDate = job.seperationDate :
-        job.seperationDate = editingSeperationDate);
+        editingCompanyName !== "" && (job.companyName = editingCompanyName);
+        editingPositionTitle !== '' && (job.positionTitle = editingPositionTitle);
+        editingStartExperienceDate !== "" && (job.startExperienceDate = editingStartExperienceDate);
+        editingSeperationDate !== '' && (job.seperationDate = editingSeperationDate);
       }
       return job;
     });

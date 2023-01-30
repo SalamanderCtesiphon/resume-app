@@ -14,43 +14,44 @@ const EditExperienceCard = ({
 }) => {
     return(
       <div>
-        <div className='jobCard'>
-          <div className='details'>
-            <form className="jobEditingForm" onSubmit={() => submitEdits(job.id)}>
-              {'Company Name:'}<input 
+          <form onSubmit={() => submitEdits(job.id)}>
+          <div className='editCard'>
+            <div className='editCardDetails'>
+              <span>{'Company Name:'}<input 
                 type="text"
                 name="companyName"
                 placeholder={job.companyName}
                 value={editingCompanyName}
                 onChange={(e) => setEditingCompanyName(e.target.value)}
-              />
-              {'Position: '}<input 
+              /></span>
+              <span>{'Position: '}<input 
                 type="text"
                 name="positionTitle"
                 placeholder={job.positionTitle}
                 value={editingPositionTitle}
                 onChange={(e) => setEditingPositionTitle(e.target.value)}
-              />
-              {'Start Date: '} <input 
+              /></span>
+              <span>{'Start Date: '} <input 
                 type="text"
                 name='startExperienceDate'
                 placeholder={job.startExperienceDate}
                 value={editingStartExperienceDate}
                 onChange={(e) => setEditingStartExperienceDate(e.target.value)}
-              />
-              {'Seperation Date: '}  <input 
+              /></span>
+              <span>{'Seperation Date: '}  <input 
                 type="text"
                 name='seperationDate'
                 placeholder={job.seperationDate}
                 value={editingSeperationDate}
                 onChange={(e) => setEditingSeperationDate(e.target.value)}
-              />
-              <div className='btnBox'>
-                <button>Resubmit</button>
-              </div>
-            </form>
-          </div>
-        </div>
+              /></span>
+            </div>
+            <div className='editBtnBox'>
+              <button>Resubmit</button>
+            </div>
+            </div>
+          </form>
+       
       </div>
     )
 }
