@@ -1,41 +1,43 @@
 import '../App.css'
 
 const EditExperienceCard = ({ 
-    companyName, 
-    setCompanyName,
-    positionTitle,
-    setPositionTitle,
-    startExperienceDate,
-    setStartExperienceDate,
-    seperationDate,
-    setSeperationDate
+    editingCompanyName, 
+    setEditingCompanyName,
+    editingPositionTitle,
+    setEditingPositionTitle,
+    editingStartExperienceDate,
+    setEditingStartExperienceDate,
+    editingSeperationDate,
+    setEditingSeperationDate,
+    submitEdits,
+    job
 }) => {
     return(
       <div>
-            <form className="jobEditingForm">
+            <form className="jobEditingForm" onSubmit={() => submitEdits(job.id)}>
               {'Company Name:'}<input 
                 type="text"
                 name="companyName"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
+                value={editingCompanyName}
+                onChange={(e) => setEditingCompanyName(e.target.value)}
               />
               {'Position: '}<input 
                 type="text"
                 name="positionTitle"
-                value={positionTitle}
-                onChange={(e) => setPositionTitle(e.target.value)}
+                value={editingPositionTitle}
+                onChange={(e) => setEditingPositionTitle(e.target.value)}
               />
               {'Start Date: '} <input 
                 type="text"
                 name='startExperienceDate'
-                value={startExperienceDate}
-                onChange={(e) => setStartExperienceDate(e.target.value)}
+                value={editingStartExperienceDate}
+                onChange={(e) => setEditingStartExperienceDate(e.target.value)}
               />
               {'Seperation Date: '}  <input 
                 type="text"
                 name='seperationDate'
-                value={seperationDate}
-                onChange={(e) => setSeperationDate(e.target.value)}
+                value={editingSeperationDate}
+                onChange={(e) => setEditingSeperationDate(e.target.value)}
               />
               <button>Resubmit</button>
             </form>

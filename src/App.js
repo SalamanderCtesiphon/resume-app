@@ -27,6 +27,10 @@ function App(props) {
   const [seperationDate, setSeperationDate] = useState('');
   const [experienceSubmit, setExperienceSunmit] = useState(true);
   const [jobEditing, setJobEditing] = useState(null);
+  const [editingCompanyName, setEditingCompanyName] = useState('');
+  const [editingPositionTitle, setEditingPositionTitle] = useState('');
+  const [editingStartExperienceDate, setEditingStartExperienceDate] = useState('');
+  const [editingSeperationDate, setEditingSeperationDate] = useState('');
   const [jobs, setJobs] = useState([
     {
       id: 1,
@@ -128,6 +132,20 @@ function App(props) {
     setExperienceSunmit(false);
   }
 
+  function submitEdits(id) {
+    const updatedJobs = [...jobs].map((job) => {
+      if (job.id === id) {
+        job.companyName = editingCompanyName;
+        job.positionTitle = editingPositionTitle;
+        job.startExperienceDate = editingStartExperienceDate;
+        job.seperationDate = editingSeperationDate;
+      }
+      return job;
+    });
+    setJobs(updatedJobs);
+    setJobEditing(null);
+  }
+
   return (
     <div className="App">
       <h1 className="header">Resume Editor</h1>
@@ -215,8 +233,15 @@ function App(props) {
                         job={job}
                         setJobEditing={setJobEditing}
                         delJob={delJob}
-                        companyName={companyName}
-                        setCompanyName={setCompanyName}
+                        editingCompanyName={editingCompanyName}
+                        editingPositionTitle={editingPositionTitle}
+                        editingStartExperienceDate={editingStartExperienceDate}
+                        editingSeperationDate={editingSeperationDate}
+                        setEditingCompanyName={setEditingCompanyName}
+                        setEditingPositionTitle={setEditingPositionTitle}
+                        setEditingStartExperienceDate={setEditingStartExperienceDate}
+                        setEditingSeperationDate={setEditingSeperationDate}
+                        submitEdits={submitEdits}
                       />
                     ):(
                      <ExperienceCard
