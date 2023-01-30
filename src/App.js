@@ -223,6 +223,7 @@ function App(props) {
                       job={job}
                       setJobEditing={setJobEditing}
                       jobEditing={jobEditing}
+                      delJob={delJob}
                      />
                     )} 
                   </li>

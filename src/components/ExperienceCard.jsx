@@ -8,7 +8,7 @@ const ExperienceCard = ({ job, setJobEditing, delJob }) => {
                           <div className="cardItem">Seperation Date: {job.seperationDate}</div>
                       </div>
                       <div className="cardItem btnBox"><button onClick={() => setJobEditing(job.id)}>Edit</button>
-                      <button onClick={delJob}>Delete</button></div>
+                      <button onClick={() => delJob(job.id)}>Delete</button></div>
         </div>
     )
 }
