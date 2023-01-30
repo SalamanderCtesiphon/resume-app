@@ -12,8 +12,8 @@ function App(props) {
   const [zip, setZip] = useState('79777');
   const [email, setEmail] = useState('swssswiss@aol.com');
   const [phone, setPhone] = useState('+1-555-444-8523');
-  const [contactSubmit, setContactSubmit] = useState(false);
-  const [educationSubmit, setEducationSubmit] = useState(false)
+  const [contactSubmit, setContactSubmit] = useState(true);
+  const [educationSubmit, setEducationSubmit] = useState(true);
   const [schoolName, setSchoolName] = useState('Texas Tech University')
   const [fieldOfStudy, setFieldOfStudy] = useState('Ergonomics');
   const [startDate, setStartDate] = useState('July 1776');
