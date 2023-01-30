@@ -8,23 +8,54 @@ import Experience from "./components/Experience";
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
   const [lastName, setLastName] = useState('Quixote');
-  const [streetAddress, setStreetAddress] = useState('2712 W. Willmington St.');
+  const [streetAddress, setStreetAddress] = useState('3312 W. Willmington St.');
   const [city, setCity] = useState('Lamesa');
   const [state, setState] = useState('TX');
   const [zip, setZip] = useState('79777');
-  const [email, setEmail] = useState('swssswiss@aol.com');
+  const [email, setEmail] = useState('famouscompany@aol.com');
   const [phone, setPhone] = useState('+1-555-444-8523');
   const [contactSubmit, setContactSubmit] = useState(true);
   const [educationSubmit, setEducationSubmit] = useState(true);
-  const [schoolName, setSchoolName] = useState('Texas Tech University');
-  const [fieldOfStudy, setFieldOfStudy] = useState('Ergonomics');
-  const [startDate, setStartDate] = useState('July 1776');
+  const [schoolName, setSchoolName] = useState('Peperdine University');
+  const [fieldOfStudy, setFieldOfStudy] = useState('Doctorate of Philosophy in Phrenology');
+  const [startDate, setStartDate] = useState('June 1979');
   const [completeDate, setCompleteDate] = useState('December 2040');
-  const [companyName, setCompanyName] = useState('Famous Company');
-  const [positionTitle, setPositionTitle] = useState('Manager');
-  const [startExperienceDate, setStartExperienceDate] = useState('December 2012');
-  const [seperationDate, setSeperationDate] = useState('August 2020');
+  const [companyName, setCompanyName] = useState('');
+  const [positionTitle, setPositionTitle] = useState('');
+  const [startExperienceDate, setStartExperienceDate] = useState('');
+  const [seperationDate, setSeperationDate] = useState('');
   const [experienceSubmit, setExperienceSunmit] = useState(true);
+  const [jobEditing, setJobEditing] = useState(false);
+  const [jobs, setJobs] = useState([
+    {
+      id: 1,
+      companyName: "Taco Bell",
+      positionTitle: "Shift Leader",
+      startExperienceDate: "July 2016",
+      seperationDate: "August 2016",
+      experienceSubmit: true,
+      jobEditing: true
+    },
+    {
+      id: 2,
+      companyName: "Bell Labratories",
+      positionTitle: "Research Chemist",
+      startExperienceDate: "June 2066",
+      seperationDate: "August 2067",
+      experienceSubmit: true,
+      jobEditing: false
+    },
+    {
+      id: 3,
+      companyName: "Southwestern Bell",
+      positionTitle: "Network Engineer",
+      startExperienceDate: "January 1980",
+      seperationDate: "August 1984",
+      experienceSubmit: true,
+      jobEditing: false
+    }
+
+  ]);
 
   function handleSubmit(e) {
       e.preventDefault();
@@ -50,11 +81,38 @@ function App(props) {
 
   function handleExperiencSubmit(e) {
     e.preventDefault();
-    setCompanyName(companyName);
-    setPositionTitle(positionTitle);
-    setStartExperienceDate(startExperienceDate);
-    setSeperationDate(seperationDate);
+    addJob({ 
+      companyName,
+      positionTitle,
+      startExperienceDate,
+      seperationDate,
+      experienceSubmit,
+      jobEditing
+    })
+    setCompanyName('');
+    setPositionTitle('');
+    setStartExperienceDate('');
+    setSeperationDate('');
     setExperienceSunmit(true);
+    setJobEditing(false);
+  }
+
+  const addJob = (job) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newJob = {
+      id,
+      companyName,
+      positionTitle,
+      startExperienceDate,
+      seperationDate,
+      experienceSubmit,
+      jobEditing
+    }
+    setJobs([...jobs, newJob])
+  }
+
+  function delJob(id)  {
+    setJobs(jobs.filter((job) => job.id !== id))
   }
 
   function toggleContact(e) {
@@ -145,10 +203,57 @@ function App(props) {
           <div className="wrapper">
             <h3>Experience:</h3>
             <div className="workHistory">
-              <p>Company Name: {companyName}</p>
-              <p>Position:   {positionTitle}</p>
-              <p>Start Date: {startExperienceDate}</p>
-              <p>Final Date: {seperationDate}</p>
+              <ul>
+                {jobs.map((job) => (
+                  <li 
+                    key={job.id} 
+                    className="listItem"
+                  >
+                    {job.id === jobEditing ? (
+                      <form className="jobEditingForm">
+                        {'Company Name:'}<input 
+                          type="text"
+                          name="companyName"
+                          value={companyName}
+                          onChange={(e) => setCompanyName(e.target.value)}
+                        />
+                        {'Position: '}<input 
+                          type="text"
+                          name="positionTitle"
+                          value={positionTitle}
+                          onChange={(e) => setPositionTitle(e.target.value)}
+                        />
+                        {'Start Date: '} <input 
+                          type="text"
+                          name='startExperienceDate'
+                          value={startExperienceDate}
+                          onChange={(e) => setStartExperienceDate(e.target.value)}
+                        />
+                        {'Seperation Date: '}  <input 
+                          type="text"
+                          name='seperationDate'
+                          value={seperationDate}
+                          onChange={(e) => setSeperationDate(e.target.value)}
+                        />
+                        <button>Resubmit</button>
+                      </form>
+                    ):(
+                      <div className="jobCard">
+                        <div className="details">
+                          <div className="cardItem">Company Name: {job.companyName}</div>
+                          <div className="cardItem">Position: {job.positionTitle}</div>
+                          <div className="cardItem">Start Date: {job.startExperienceDate}</div>
+                          <div className="cardItem">Seperation Date: {job.seperationDate}</div>
+                        </div>
+                        <div className="cardItem btnBox"><button onClick={(id) => setJobEditing(true)}>Edit</button>
+                        <button onClick={delJob}>Delete</button></div>
+
+                      </div>
+                    )}
+                    
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
