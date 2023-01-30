@@ -20,24 +20,28 @@ const EditExperienceCard = ({
               {'Company Name:'}<input 
                 type="text"
                 name="companyName"
+                placeholder={job.companyName}
                 value={editingCompanyName}
                 onChange={(e) => setEditingCompanyName(e.target.value)}
               />
               {'Position: '}<input 
                 type="text"
                 name="positionTitle"
+                placeholder={job.positionTitle}
                 value={editingPositionTitle}
                 onChange={(e) => setEditingPositionTitle(e.target.value)}
               />
               {'Start Date: '} <input 
                 type="text"
                 name='startExperienceDate'
+                placeholder={job.startExperienceDate}
                 value={editingStartExperienceDate}
                 onChange={(e) => setEditingStartExperienceDate(e.target.value)}
               />
               {'Seperation Date: '}  <input 
                 type="text"
                 name='seperationDate'
+                placeholder={job.seperationDate}
                 value={editingSeperationDate}
                 onChange={(e) => setEditingSeperationDate(e.target.value)}
               />

@@ -135,10 +135,14 @@ function App(props) {
   function submitEdits(id) {
     const updatedJobs = [...jobs].map((job) => {
       if (job.id === id) {
-        job.companyName = editingCompanyName;
-        job.positionTitle = editingPositionTitle;
-        job.startExperienceDate = editingStartExperienceDate;
-        job.seperationDate = editingSeperationDate;
+        (editingCompanyName === '' ? job.companyName = job.companyName :
+        job.companyName = editingCompanyName);
+        (editingPositionTitle === '' ? job.positionTitle = job.positionTitle :
+        job.positionTitle = editingPositionTitle);
+        (editingStartExperienceDate === '' ? job.startExperienceDate = job.startExperienceDate :
+        job.startExperienceDate = editingStartExperienceDate);
+        (editingSeperationDate === '' ? job.seperationDate = job.seperationDate :
+        job.seperationDate = editingSeperationDate);
       }
       return job;
     });
