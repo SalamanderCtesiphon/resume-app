@@ -28,7 +28,7 @@ const ContactInfo = ({
         <div className="contactForm">
             <h3>Contact Information</h3>
             {contactSubmit === true ? (
-                <button onClick={toggleContact}>Edit Section</button>
+                <button onClick={toggleContact}>Edit</button>
             ) : (
                 <form onSubmit={handleSubmit} className="contactInputs">
                 <label>First Name:</label>

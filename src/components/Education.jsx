@@ -17,7 +17,7 @@ const Education = ({
     <div className='educationForm'>
         <h3>Education</h3>
         {educationSubmit === true ? (
-                <button onClick={toggleEducation}>Edit Section</button>
+                <button onClick={toggleEducation}>Edit</button>
             ) : (
             <form className='contactInputs' onSubmit={handleEducationSubmit}>
                 <label>School Name:</label>

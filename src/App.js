@@ -134,10 +134,14 @@ function App(props) {
           </div>
         </div>
         <div className="educationSection">
-          <h3>Education: </h3>
-          <p>{schoolName}</p>
-          <p>{fieldOfStudy}</p>
-          <p>{startDate}{' '}-{' '}{completeDate}</p>
+          <div className="wrapper">
+            <h3>Education: </h3>
+            <div className="eduInfo">
+              <p>{schoolName}</p>
+              <p>{fieldOfStudy}</p>
+              <p>{startDate}{' '}-{' '}{completeDate}</p>
+            </div>
+          </div>
           <div className="wrapper">
             <h3>Experience:</h3>
             <div className="workHistory">
