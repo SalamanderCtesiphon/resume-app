@@ -4,20 +4,20 @@ import ContactInfo from './components/ContactInfo';
 import Education from "./components/Education";
 
 function App(props) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [streetAddress, setStreetAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zip, setZip] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [firstName, setFirstName] = useState('Seamus');
+  const [lastName, setLastName] = useState('Quixote');
+  const [streetAddress, setStreetAddress] = useState('2712 W. Willmington St.');
+  const [city, setCity] = useState('Lamesa');
+  const [state, setState] = useState('TX');
+  const [zip, setZip] = useState('79777');
+  const [email, setEmail] = useState('swssswiss@aol.com');
+  const [phone, setPhone] = useState('+1-555-444-8523');
   const [contactSubmit, setContactSubmit] = useState(false);
   const [educationSubmit, setEducationSubmit] = useState(false)
-  const [schoolName, setSchoolName] = useState('')
-  const [fieldOfStudy, setFieldOfStudy] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [completeDate, setCompleteDate] = useState('');
+  const [schoolName, setSchoolName] = useState('Texas Tech University')
+  const [fieldOfStudy, setFieldOfStudy] = useState('Ergonomics');
+  const [startDate, setStartDate] = useState('July 1776');
+  const [completeDate, setCompleteDate] = useState('December 2040');
 
   function handleSubmit(e) {
       e.preventDefault();
