@@ -1,6 +1,15 @@
 import '../App.css'
 
-const EditExperienceCard = ({ job, toggleJobEditing, delJob}) => {
+const EditExperienceCard = ({ 
+    companyName, 
+    setCompanyName,
+    positionTitle,
+    setPositionTitle,
+    startExperienceDate,
+    setStartExperienceDate,
+    seperationDate,
+    setSeperationDate
+}) => {
     return(
       <div>
             <form className="jobEditingForm">

@@ -1,4 +1,4 @@
-const ExperienceCard = () => {
+const ExperienceCard = ({ job, toggleJobEditing, delJob }) => {
     return (
         <div>
             <div className="jobCard">

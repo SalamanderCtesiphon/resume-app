@@ -4,6 +4,7 @@ import ContactInfo from './components/ContactInfo';
 import EditExperienceCard from "./components/EditExperienceCard";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import ExperienceCard from "./components/ExperienceCard";
 
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
@@ -218,9 +219,13 @@ function App(props) {
                         job={job}
                         toggleJobEditing={toggleJobEditing}
                         delJob={delJob}
+                        companyName={companyName}
+                        setCompanyName={setCompanyName}
                       />
                     ):(
-                     <ExperienceCard />
+                     <ExperienceCard
+                      job={job}
+                     />
                     )} 
                   </li>
                 ))}
