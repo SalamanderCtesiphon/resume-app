@@ -13,4 +13,4 @@ const ExperienceCard = () => {
     )
 }
 
-exprot default ExperienceCard
+export default ExperienceCard

@@ -5,7 +5,6 @@ import EditExperienceCard from "./components/EditExperienceCard";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 
-
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
   const [lastName, setLastName] = useState('Quixote');

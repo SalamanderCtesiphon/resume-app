@@ -11,7 +11,6 @@ const Experience = ({
     seperationDate,
     setSeperationDate
 }) => {
-
     return (
         <div className="educationForm">
             <h3>Experience </h3>
