@@ -3,7 +3,7 @@ import './App.css';
 import ContactInfo from './components/ContactInfo';
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import ExperienceList from "./components/ExperienceList";
+
 
 function App(props) {
   const [firstName, setFirstName] = useState('Seamus');
@@ -139,7 +139,13 @@ function App(props) {
           <p>{fieldOfStudy}</p>
           <p>{startDate}{' '}-{' '}{completeDate}</p>
           <div className="wrapper">
-            <ExperienceList />
+            <h3>Experience:</h3>
+            <div className="workHistory">
+              <p>Company Name: {companyName}</p>
+              <p>Position:   {positionTitle}</p>
+              <p>Start Date: {startExperienceDate}</p>
+              <p>Final Date: {seperationDate}</p>
+            </div>
           </div>
         </div>
       </div>

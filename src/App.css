@@ -79,3 +79,10 @@ input {
 .wrapper {
   margin: 20px;
 }
+
+.workHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
