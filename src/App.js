@@ -5,6 +5,7 @@ import EditExperienceCard from "./components/EditExperienceCard";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import ExperienceCard from "./components/ExperienceCard";
+import Footer from "./Footer";
 
 function App(props) {
   const [firstName, setFirstName] = useState('Someone');
@@ -257,7 +258,9 @@ function App(props) {
             </div>
           </div>
         </div>
+       
       </div>
+      <Footer />
     </div>
   );
 }

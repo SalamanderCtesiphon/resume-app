@@ -51,7 +51,21 @@ button {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
-  grid-row-end: 20;
+  grid-row-end: 19;
+}
+
+.footer {
+  grid-row-start: 20;
+  grid-row-end: 21;
+  grid-column-start: 1;
+  grid-column-end: 21;
+  color: rgba(74, 72, 72, 0.432);
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+
 }
 
 .page {
