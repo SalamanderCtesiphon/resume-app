@@ -6,27 +6,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import ExperienceCard from "./components/ExperienceCard";
 import Footer from "./Footer";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyC-527NiXtRS3R1KoK_WmjZC1PNUWR5Qho",
-  authDomain: "resume-app-a1248.firebaseapp.com",
-  projectId: "resume-app-a1248",
-  storageBucket: "resume-app-a1248.appspot.com",
-  messagingSenderId: "926511178643",
-  appId: "1:926511178643:web:3ac6ea415778a35d277e66",
-  measurementId: "G-N4Q6EK94NP"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 
 function App(props) {
